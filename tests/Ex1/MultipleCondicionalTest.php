@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Ex1;
 
 use PHPUnit\Framework\TestCase;
 
-use App\MultipleCondicional;
+use App\Ex1\MultipleCondicional;
 
 class MultipleCondicionalTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Ex1;
 
 class OrCondicional implements Condicional
 {

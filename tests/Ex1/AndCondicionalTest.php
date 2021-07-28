@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Tests\Ex1;
+
+use PHPUnit\Framework\TestCase;
+
+use App\Ex1\AndCondicional;
+use App\Ex1\MultipleCondicional;
+
+class AndCondicionalTest extends TestCase
+{
+    public function testShouldCondicionalIsValid() 
+    {
+        $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
+        $stubMultipleCondicional1->method('isValid')->willReturn(true);
+
+        $stubMultipleCondicional2 = $this->createMock(MultipleCondicional::class);
+        $stubMultipleCondicional2->method('isValid')->willReturn(true);
+
+        $andCondicional = new AndCondicional([$stubMultipleCondicional1, $stubMultipleCondicional2]);
+
+        $this->assertTrue($andCondicional->isValid(15));
+        $this->assertTrue($andCondicional->isValid(30));
+    }
+    
+    public function testShouldCondicionalIsInvalid() 
+    {
+        $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
+        $stubMultipleCondicional1->method('isValid')->willReturn(false);
+
+        $stubMultipleCondicional2 = $this->createMock(MultipleCondicional::class);
+        $stubMultipleCondicional2->method('isValid')->willReturn(false);
+
+        $andCondicional = new AndCondicional([$stubMultipleCondicional1, $stubMultipleCondicional2]);
+
+        $this->assertFalse($andCondicional->isValid(2));
+        $this->assertFalse($andCondicional->isValid(6));
+        $this->assertFalse($andCondicional->isValid(21));
+    }
+}

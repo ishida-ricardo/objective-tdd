@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Ex1;
 
 use PHPUnit\Framework\TestCase;
 
-use App\MultipleCalculator;
-use App\AndCondicional;
-use App\OrCondicional;
-use App\MultipleCondicional;
+use App\Ex1\MultipleCalculator;
+use App\Ex1\AndCondicional;
+use App\Ex1\OrCondicional;
+use App\Ex1\MultipleCondicional;
 
 class CalculateMultipleTest extends TestCase
 {
