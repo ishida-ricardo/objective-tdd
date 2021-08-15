@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class OrCondicionalTest extends TestCase
 {
-    public function testShouldCondicionalIsValid()
+    public function testShouldCondicionalIsValid(): void
     {
         $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional1->method('isValid')->willReturn(true);
@@ -16,7 +16,7 @@ class OrCondicionalTest extends TestCase
         $stubMultipleCondicional2 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional2->method('isValid')->willReturn(true);
 
-        $orCondicional = new OrCondicional([$stubMultipleCondicional1, $stubMultipleCondicional2]);
+        $orCondicional = new OrCondicional($stubMultipleCondicional1, $stubMultipleCondicional2);
 
         $this->assertTrue($orCondicional->isValid(3));
         $this->assertTrue($orCondicional->isValid(5));
@@ -25,7 +25,7 @@ class OrCondicionalTest extends TestCase
         $this->assertTrue($orCondicional->isValid(15));
     }
 
-    public function testShouldCondicionalIsInvalid()
+    public function testShouldCondicionalIsInvalid(): void
     {
         $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional1->method('isValid')->willReturn(false);
@@ -33,7 +33,7 @@ class OrCondicionalTest extends TestCase
         $stubMultipleCondicional2 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional2->method('isValid')->willReturn(false);
 
-        $orCondicional = new OrCondicional([$stubMultipleCondicional1, $stubMultipleCondicional2]);
+        $orCondicional = new OrCondicional($stubMultipleCondicional1, $stubMultipleCondicional2);
 
         $this->assertFalse($orCondicional->isValid(2));
         $this->assertFalse($orCondicional->isValid(7));
