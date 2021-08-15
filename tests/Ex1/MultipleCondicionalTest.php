@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MultipleCondicionalTest extends TestCase
 {
-    public function testShouldCondicionalIsValid()
+    public function testShouldCondicionalIsValid(): void
     {
         $multipleCondicional = new MultipleCondicional(3);
 
@@ -17,7 +17,7 @@ class MultipleCondicionalTest extends TestCase
         $this->assertTrue($multipleCondicional->isValid(33));
     }
 
-    public function testShouldCondicionalIsInvalid()
+    public function testShouldCondicionalIsInvalid(): void
     {
         $multipleCondicional = new MultipleCondicional(3);
 

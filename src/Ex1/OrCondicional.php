@@ -4,9 +4,10 @@ namespace App\Ex1;
 
 class OrCondicional implements Condicional
 {
+    /** @var Condicional[] */
     private $itens;
 
-    public function __construct($itens)
+    public function __construct(Condicional ...$itens)
     {
         $this->itens = $itens;
     }

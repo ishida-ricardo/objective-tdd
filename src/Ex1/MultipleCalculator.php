@@ -4,9 +4,9 @@ namespace App\Ex1;
 
 class MultipleCalculator
 {
-    private $condicional;
+    private Condicional $condicional;
 
-    public function __construct($condicional)
+    public function __construct(Condicional $condicional)
     {
         $this->condicional = $condicional;
     }
