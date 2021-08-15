@@ -20,6 +20,7 @@ class AndCondicionalTest extends TestCase
 
         $this->assertTrue($andCondicional->isValid(15));
         $this->assertTrue($andCondicional->isValid(30));
+        $this->assertTrue($andCondicional->isValid(45));
     }
 
     public function testShouldCondicionalIsInvalid()
