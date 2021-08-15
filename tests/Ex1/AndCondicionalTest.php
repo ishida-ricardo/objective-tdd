@@ -2,14 +2,13 @@
 
 namespace App\Tests\Ex1;
 
-use PHPUnit\Framework\TestCase;
-
 use App\Ex1\AndCondicional;
 use App\Ex1\MultipleCondicional;
+use PHPUnit\Framework\TestCase;
 
 class AndCondicionalTest extends TestCase
 {
-    public function testShouldCondicionalIsValid() 
+    public function testShouldCondicionalIsValid()
     {
         $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional1->method('isValid')->willReturn(true);
@@ -22,8 +21,8 @@ class AndCondicionalTest extends TestCase
         $this->assertTrue($andCondicional->isValid(15));
         $this->assertTrue($andCondicional->isValid(30));
     }
-    
-    public function testShouldCondicionalIsInvalid() 
+
+    public function testShouldCondicionalIsInvalid()
     {
         $stubMultipleCondicional1 = $this->createMock(MultipleCondicional::class);
         $stubMultipleCondicional1->method('isValid')->willReturn(false);

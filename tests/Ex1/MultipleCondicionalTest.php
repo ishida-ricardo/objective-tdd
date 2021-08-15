@@ -2,13 +2,12 @@
 
 namespace App\Tests\Ex1;
 
-use PHPUnit\Framework\TestCase;
-
 use App\Ex1\MultipleCondicional;
+use PHPUnit\Framework\TestCase;
 
 class MultipleCondicionalTest extends TestCase
 {
-    public function testShouldCondicionalIsValid() 
+    public function testShouldCondicionalIsValid()
     {
         $multipleCondicional = new MultipleCondicional(3);
 
@@ -17,8 +16,8 @@ class MultipleCondicionalTest extends TestCase
         $this->assertTrue($multipleCondicional->isValid(15));
         $this->assertTrue($multipleCondicional->isValid(33));
     }
-    
-    public function testShouldCondicionalIsInvalid() 
+
+    public function testShouldCondicionalIsInvalid()
     {
         $multipleCondicional = new MultipleCondicional(3);
 
