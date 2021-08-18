@@ -4,6 +4,7 @@ namespace App\Ex2;
 
 class HappyNumber
 {
+    /** @var int[] */
     private $valores;
 
     public function __construct()
@@ -18,11 +19,11 @@ class HappyNumber
 
     private function sumOfSquaresOfDigits(int $number): int
     {
-        $numbers = str_split($number);
+        $numbers = str_split(strval($number));
 
         $total = 0;
         foreach ($numbers as $key => $num) {
-            $total = $this->calculateSquare($num) + $total;
+            $total = $this->calculateSquare(intval($num)) + $total;
         }
 
         return $total;
