@@ -38,17 +38,20 @@ class HappyNumber
         $this->valores[] = $number;
 
         $result = $number;
-        if(count($this->valores) == 1)
+        if (count($this->valores) == 1) {
             $result = $this->calculateSquare($number);
+        }
 
         $total = $this->sumOfSquaresOfDigits($result);
 
-        if($this->inLoop($total))
+        if ($this->inLoop($total)) {
             return false;
-        
-        if($total == 1)
+        }
+
+        if ($total == 1) {
             return true;
-        
+        }
+
         return $this->isHappyNumber($total);
     }
 }
